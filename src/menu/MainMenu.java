@@ -12,7 +12,7 @@ public class MainMenu implements MenuConstants {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Phone management program");
+            System.out.println("----------PHONE MANAGEMENT PROGRAM-----------");
             System.out.println("Select function by number(to continue):");
             System.out.println(ADD_PHONE + ". Add");
             System.out.println(DELETE_PHONE + ". Delete");
@@ -52,7 +52,7 @@ public class MainMenu implements MenuConstants {
     }
 
     private static void addPhone(Scanner scanner, PhoneController controller) {
-        System.out.println("Add Phone:");
+        System.out.println("Add New Phone");
         System.out.print("Enter phone name: ");
         String name = scanner.nextLine();
         if (!isValidName(name)) {
