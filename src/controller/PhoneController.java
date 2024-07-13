@@ -47,7 +47,6 @@ public class PhoneController implements PhoneOperations {
                 found = true;
             }
         }
-
         if (!found) {
             System.out.println("No phones found with the given keyword.");
         }
@@ -93,11 +92,12 @@ public class PhoneController implements PhoneOperations {
     }
 
     private void saveToFile(String fileName, String type) {
-        try (PrintWriter pw = new PrintWriter(new FileWriter(fileName))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
             for (Phone phone : phones) {
                 if (("authentic".equals(type) && phone instanceof AuthenticPhone) ||
                         ("import".equals(type) && phone instanceof ImportPhone)) {
-                    pw.println(phone.toCSV());
+                    bw.write(phone.toCSV());
+                    bw.newLine();
                 }
             }
         } catch (IOException e) {
