@@ -115,6 +115,7 @@ public class MainMenu implements MenuConstants {
             phone = new ImportPhone(controller.getNextId(), name, price, quantity, manufacturer, importCountry, usageStatus);
         }
         controller.addPhone(phone);
+        controller.savePhones();
         System.out.println("Phone added successfully.");
     }
 

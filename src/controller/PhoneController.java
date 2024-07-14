@@ -9,6 +9,8 @@ import java.io.*;
 import java.util.*;
 
 public class PhoneController implements PhoneOperations {
+    private static final String AUTHENTIC_FILE = "authentic_phones.csv";
+    private static final String IMPORT_FILE = "authentic_phones.csv";
     private List<Phone> phones = new ArrayList<>();
     private int idCounter = 1;
 
